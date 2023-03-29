@@ -2,8 +2,8 @@ package nave_espacial.componentes.sistema_de_propulsion;
 
 import nave_espacial.componentes.ComponenteNave;
 /**
- * Clase abstracta para encapsular los sitemas de propulsion que pueden llegar 
- * a existir
+ * Clase abstracta para encapsular los sitemas de propulsion en general que pueden
+ * llegar a existir
  */
 public abstract class SistemaDePropulsion implements ComponenteNave{
 

@@ -13,4 +13,11 @@ public abstract class Blindaje implements ComponenteNave{
     @Override public String tipo(){
         return "Blindaje";
     }
+
+    /**
+     * Metodo abstracto que nos ayuda a saber el subtipo de Cabina que es 
+     * (Simple, Reforzado, Fortaleza).
+     * @return El tipo de Blindaje que modela la clase que implementa a esta clase.
+     */
+    public abstract String subTipo();
 }

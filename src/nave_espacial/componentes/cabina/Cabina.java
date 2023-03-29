@@ -13,4 +13,11 @@ public abstract class Cabina implements ComponenteNave{
     @Override public String tipo(){
         return "Cabina";
     }
+
+    /**
+     * Metodo abstracto que nos ayuda a saber el subtipo de Cabina que es 
+     * (Un Piloto, Tripulación pequeña, Ejercito).
+     * @return El tipo de Cabina que modela la clase que implementa a esta clase.
+     */
+    public abstract String subTipo();
 }
