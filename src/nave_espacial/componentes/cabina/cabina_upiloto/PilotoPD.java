@@ -22,7 +22,7 @@ public class PilotoPD extends CPiloto{
      * @return La descripción del componente de la nave
      */
     @Override public String descripcion(){
-        return "Permite viajar a distancias cortas como un avión";
+        return "Ideal para viajar solo solin solito";
     }
 
     /**
@@ -30,7 +30,7 @@ public class PilotoPD extends CPiloto{
      * @return El precio del componente de la nave
      */
     @Override public double precio(){
-        return 25000;
+        return 5000;
     }
 
     /**
@@ -38,7 +38,7 @@ public class PilotoPD extends CPiloto{
      * @return Un aumento o disminución del ataque de la nave
      */
     @Override public int ataque(){
-        return -3;
+        return -2;
     }
 
     /**
@@ -46,7 +46,7 @@ public class PilotoPD extends CPiloto{
      * @return Un aumento o disminución de la defensa de la nave
      */
     @Override public int defensa(){
-        return -5;
+        return -4;
     }
 
     /**
@@ -54,14 +54,15 @@ public class PilotoPD extends CPiloto{
      * @return Un aumento o disminución de la velocidad de la nave
      */
     @Override public int velocidad(){
-        return 12200;
+        return 0;
     }
 
     /**
      * Metodo que nos ayuda a saber cuanto peso modifica el componente de la nave
-     * @return Un aumento o disminución del peso de la nave
+     * @return Un aumento o disminución del peso que va a tener la nave al terminar
+     * de armarla
      */
     @Override public double peso(){
-        return 20000;
+        return 200;
     }
 }

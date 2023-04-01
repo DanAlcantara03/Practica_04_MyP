@@ -1,13 +1,13 @@
-package nave_espacial.componentes.sistema_de_propulsion.sdp_intercontinental;
+package nave_espacial.componentes.armas.armas_misiles_plasma;
 
 /**
- * Clase especifica que nos modela un Sistema de Propulsion Intercontinental por
- * defecto, aqui ya implementaremos todos los metodos de la interfaz ComponenteNave
+ * Clase especifica que nos modela un blindaje reforzado por defecto, aqui ya 
+ * implementaremos todos los metodos de la interfaz ComponenteNave
  */
-public class IntercontinentalPD extends SDPIntercontinental{
+public class MisilesPlasmaPD extends AMisilesPlasma{
     
     /* Constructor vacio. */
-    public IntercontinentalPD(){}
+    public MisilesPlasmaPD(){}
 
     /**
      * Metodo que nos ayuda a saber el nombre del componente 
@@ -22,7 +22,7 @@ public class IntercontinentalPD extends SDPIntercontinental{
      * @return La descripción del componente de la nave
      */
     @Override public String descripcion(){
-        return "Permite viajar a distancias cortas como un avión";
+        return "Lanza 3 misiles de plasma por disparo";
     }
 
     /**
@@ -30,7 +30,7 @@ public class IntercontinentalPD extends SDPIntercontinental{
      * @return El precio del componente de la nave
      */
     @Override public double precio(){
-        return 25000;
+        return 23000;
     }
 
     /**
@@ -38,7 +38,7 @@ public class IntercontinentalPD extends SDPIntercontinental{
      * @return Un aumento o disminución del ataque de la nave
      */
     @Override public int ataque(){
-        return -3;
+        return 1000;
     }
 
     /**
@@ -46,7 +46,7 @@ public class IntercontinentalPD extends SDPIntercontinental{
      * @return Un aumento o disminución de la defensa de la nave
      */
     @Override public int defensa(){
-        return -5;
+        return 50;
     }
 
     /**
@@ -54,15 +54,15 @@ public class IntercontinentalPD extends SDPIntercontinental{
      * @return Un aumento o disminución de la velocidad de la nave
      */
     @Override public int velocidad(){
-        return 12200;
+        return -700;
     }
 
     /**
      * Metodo que nos ayuda a saber cuanto peso modifica el componente de la nave
-     * * @return Un aumento o disminución del peso que va a tener la nave al terminar
+     * @return Un aumento o disminución del peso que va a tener la nave al terminar
      * de armarla
      */
     @Override public double peso(){
-        return 20000;
+        return 2300;
     }
 }
