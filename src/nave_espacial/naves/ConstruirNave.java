@@ -1,14 +1,22 @@
 package nave_espacial.naves;
 
 import nave_espacial.NaveEspacial;
+import nave_espacial.componentes.armas.armas_laser_destructor_de_planetas.LaserDestructorPD;
+import nave_espacial.componentes.armas.armas_laser_simple.LaserSimplePD;
 import nave_espacial.componentes.armas.armas_misiles_plasma.MisilesPlasmaPD;
+import nave_espacial.componentes.blindaje.blindaje_fortaleza.FortalezaPD;
 import nave_espacial.componentes.blindaje.blindaje_reforzado.ReforzadoPD;
+import nave_espacial.componentes.blindaje.blindaje_simple.SimplePD;
+import nave_espacial.componentes.cabina.cabina_ejercito.EjercitoPD;
+import nave_espacial.componentes.cabina.cabina_tripulacion_pequeña.TripulacionPequeñaPD;
 import nave_espacial.componentes.cabina.cabina_upiloto.PilotoPD;
-import nave_espacial.componentes.sistema_de_propulsion.SistemaDePropulsion;
 import nave_espacial.componentes.sistema_de_propulsion.sdp_intercontinental.IntercontinentalPD;
 import nave_espacial.componentes.sistema_de_propulsion.sdp_intergalactico.IntergalacticoPD;
 import nave_espacial.componentes.sistema_de_propulsion.sdp_interplanetario.InterplanetarioPD;
 
+/**
+ * Clase para construir una nave con todos sus componentes.
+ */
 public class ConstruirNave extends NaveEspacial{
     /* Un string para que el usuario pueda ponerle el nombre que quiera a su nave
     o simplemente quedarse con el nombre por defecto "Nave Armada" */
@@ -110,13 +118,13 @@ public class ConstruirNave extends NaveEspacial{
             int n = MAux.getNum();
             switch(n){
                 case 1:
-                    //blindaje = new;
+                    blindaje = new SimplePD();
                 break;
                 case 2:
                     blindaje = new ReforzadoPD();
                 break;                
                 case 3:
-                    //blindaje = new;
+                    blindaje = new FortalezaPD();
                 break;
                 default: 
                     System.out.println("Esa no es una opción valida intentelo de nuevo\n");
@@ -136,12 +144,12 @@ public class ConstruirNave extends NaveEspacial{
                     cabina = new PilotoPD();
                 break;
                 case 2:
-                    //cabina = new;
+                    cabina = new TripulacionPequeñaPD();
                 break;                
                 case 3:
-                    //cabina = new;
+                    cabina = new EjercitoPD();
                 break;
-                default: 
+                default:
                     System.out.println("Esa no es una opción valida intentelo de nuevo\n");
             }
         }
@@ -156,13 +164,13 @@ public class ConstruirNave extends NaveEspacial{
             int n = MAux.getNum();
             switch(n){
                 case 1:
-                    // armas = new;
+                    armas = new LaserSimplePD();
                 break;
                 case 2:
                     armas = new MisilesPlasmaPD();
                 break;                
                 case 3:
-                    //armas = new;
+                    armas = new LaserDestructorPD();
                 break;
                 default: 
                     System.out.println("Esa no es una opción valida intentelo de nuevo\n");

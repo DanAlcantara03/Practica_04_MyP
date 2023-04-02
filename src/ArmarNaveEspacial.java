@@ -15,8 +15,14 @@ public class ArmarNaveEspacial {
     /* Es el presupuesto inicial del usuario */
     private double presupuesto;
     /* Es la nave espacial que le venderemos al usuario */
-    private NaveEspacial naveEspacial = new ConstruirNave();
+    private NaveEspacial naveEspacial;
     
+    /**
+     * Constructor por defecto.
+     */
+    public ArmarNaveEspacial(){
+        naveEspacial = new ConstruirNave();
+    }
 
     /**
      * Metodo que nos ayuda a poner un presupuesto inicial para asi compararlo con el precio
@@ -47,30 +53,41 @@ public class ArmarNaveEspacial {
     public NaveEspacial getNaveEspacial(){
         return naveEspacial;
     }
+
     /**
      * Metodo que nos ayuda a armar la nave poco a poco
      */
-    public void armarNave(int n){
-        System.out.println("Elije con que componentes deseas armar tu nave:\n ");
-        System.out.println(componentes());
-        while(true)
-            switch(n){
-            case 1:
-                naveEspacial.agregarSistemaDePropulsion();
-            break;
-            case 2:
-                naveEspacial.agregarBlindaje();
-            break;
-            case 3:
-                naveEspacial.agregarCabina();
-            break;
-            case 4:
-                naveEspacial.agregarArmas();
-            break;
-            default:
-                System.out.println("Inserte una opción valida.");
-                n = MAux.getNum();
+    public void armarNave(){
+        int n ;
+        while(!naveEspacial.naveTerminada()){
+            System.out.println("Elije con que componentes deseas armar tu nave:\n ");
+            System.out.println(componentes());
+            n = MAux.getNum();
+            while(true){
+                switch(n){
+                case 1:
+                    naveEspacial.agregarSistemaDePropulsion();
+                break;
+                case 2:
+                    naveEspacial.agregarBlindaje();
+                break;
+                case 3:
+                    naveEspacial.agregarCabina();
+                break;
+                case 4:
+                    naveEspacial.agregarArmas();
+                break;
+                case 0:
+                if(!naveEspacial.naveTerminada()){
+                    System.out.println("La nave aun no esta terminada.");
+                }
+                break;
+                default:
+                    System.out.println("Inserte una opción valida.");
+                    n = MAux.getNum();
+                }
             }
+        }
     }
     
     /**
@@ -86,15 +103,17 @@ public class ArmarNaveEspacial {
         + "\n Inserta una opción: ");
         while(true){
             n = MAux.getNum();
+            System.out.println("");
             switch(n){ 
                 case 1:
+                armarNave();
                 break;
                 case 2:
                 System.out.println(catalogo());
                 elegirNave();
                 break;
                 default:
-                System.out.println("Por favor incerte una opcion valida.");
+                System.out.print("Por favor inserte una opcion valida: ");
             }
         }
     }
@@ -118,7 +137,7 @@ public class ArmarNaveEspacial {
      * @return un String con todas las naves por defecto que tenemos y sus descripciones.
      */
     private String catalogo(){
-        String catalog = "";
+        String catalog = "\nCatalogo por defecto: \n";
         LinkedList<NaveConcreta> nC = new LinkedList<>();
         nC.add(new NaveIndividual());
         nC.add(new NaveMilitar());
@@ -129,6 +148,9 @@ public class ArmarNaveEspacial {
         return catalog;
     }
 
+    /**
+     * Metodo auxiliar que nos ayuda a elegir una de las naves por default que creamos.
+     */
     private void elegirNave(){
         int n = MAux.getNum();;
         while(true)
