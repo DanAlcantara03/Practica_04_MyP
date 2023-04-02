@@ -154,7 +154,7 @@ public abstract class NaveEspacial{
      * y tenga todos sus componentes.
      * @return true si la nave tiene todos sus componentes, false en otro caso.
      */
-    protected boolean naveTerminada(){
+    public boolean naveTerminada(){
         boolean t = sistemaDePropulsion != null && blindaje != null &&
         cabina != null && armas != null;
         if(!t)

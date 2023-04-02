@@ -14,6 +14,9 @@ public class ConstruirNave extends NaveEspacial{
     o simplemente quedarse con el nombre por defecto "Nave Armada" */
     private String nombre = "Nave Armada";
 
+    /* Constructor vacio. */
+    public ConstruirNave(){}
+
     /**
      * Metodo que nos ayuda a saber el nombre de la nave.
      * @return el nombre de la nave
@@ -71,7 +74,7 @@ public class ConstruirNave extends NaveEspacial{
         if( armas != null)
             System.out.println("Ya ah elegido armas para esta nave.");
         else
-            elegirC();
+            elegirA();
         return this;
     }
 
