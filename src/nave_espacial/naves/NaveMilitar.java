@@ -1,9 +1,9 @@
 package nave_espacial.naves;
 
 import nave_espacial.componentes.armas.Armas;
-
+import nave_espacial.componentes.armas.armas_laser_simple.LaserSimplePD;
 import nave_espacial.componentes.blindaje.Blindaje;
-
+import nave_espacial.componentes.blindaje.blindaje_simple.SimplePD;
 import nave_espacial.componentes.cabina.Cabina;
 
 import nave_espacial.componentes.sistema_de_propulsion.SistemaDePropulsion;
@@ -41,7 +41,7 @@ public class NaveMilitar extends NaveConcreta{
      * @return un blindaje Simple PD.
      */
     @Override protected Blindaje blindajeC(){
-        return null;
+        return new SimplePD();
     }
     
     /**
@@ -55,6 +55,6 @@ public class NaveMilitar extends NaveConcreta{
      * @return Un laser Simple
      */
     @Override protected Armas armasC(){
-        return null;
+        return new LaserSimplePD();
     }
 }

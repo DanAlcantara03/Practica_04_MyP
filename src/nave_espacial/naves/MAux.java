@@ -3,8 +3,12 @@ package nave_espacial.naves;
 import java.util.LinkedList;
 import java.util.Scanner;
 import nave_espacial.componentes.ComponenteNave;
+import nave_espacial.componentes.armas.armas_laser_destructor_de_planetas.LaserDestructorPD;
+import nave_espacial.componentes.armas.armas_laser_simple.LaserSimplePD;
 import nave_espacial.componentes.armas.armas_misiles_plasma.MisilesPlasmaPD;
+import nave_espacial.componentes.blindaje.blindaje_fortaleza.FortalezaPD;
 import nave_espacial.componentes.blindaje.blindaje_reforzado.ReforzadoPD;
+import nave_espacial.componentes.blindaje.blindaje_simple.SimplePD;
 import nave_espacial.componentes.cabina.cabina_upiloto.PilotoPD;
 import nave_espacial.componentes.sistema_de_propulsion.sdp_intercontinental.IntercontinentalPD;
 import nave_espacial.componentes.sistema_de_propulsion.sdp_intergalactico.IntergalacticoPD;
@@ -59,9 +63,9 @@ public class MAux {
     public static String getBlindajes(){
         String comp = "Blindajes Disponibles: \n";
         LinkedList<ComponenteNave> sDP = new LinkedList<ComponenteNave>();        
-        //sDP.add(new );
+        sDP.add(new SimplePD());
         sDP.add(new ReforzadoPD());
-        //sDP.add(new );
+        sDP.add(new FortalezaPD());
         comp += recorrerLista(sDP);
         return comp;
     }
@@ -91,9 +95,9 @@ public class MAux {
     public static String getArmas(){
         String comp = "Armas Disponibles: \n";
         LinkedList<ComponenteNave> sDP = new LinkedList<ComponenteNave>();        
-        //sDP.add(new );
+        sDP.add(new LaserSimplePD());
         sDP.add(new MisilesPlasmaPD());
-        //sDP.add(new );
+        sDP.add(new LaserDestructorPD());
         comp += recorrerLista(sDP);
         return comp;
     }

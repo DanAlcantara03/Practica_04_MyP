@@ -1,8 +1,13 @@
+import java.util.LinkedList;
 import java.util.Scanner;
 
 import nave_espacial.NaveEspacial;
+import nave_espacial.naves.BaseEspacialDeGuerra;
 import nave_espacial.naves.ConstruirNave;
 import nave_espacial.naves.MAux;
+import nave_espacial.naves.NaveConcreta;
+import nave_espacial.naves.NaveIndividual;
+import nave_espacial.naves.NaveMilitar;
 
 public class ArmarNaveEspacial {
     /* El scanner que vamos a usar */
@@ -48,24 +53,51 @@ public class ArmarNaveEspacial {
     public void armarNave(int n){
         System.out.println("Elije con que componentes deseas armar tu nave:\n ");
         System.out.println(componentes());
-        switch(n){
-        case 1:
-            naveEspacial.agregarSistemaDePropulsion();
-        break;
-        case 2:
-            naveEspacial.agregarBlindaje();
-        break;
-        case 3:
-            naveEspacial.agregarCabina();
-        break;
-        case 4:
-            naveEspacial.agregarArmas();
-        break;
-        default:
-            System.out.println("Incerte una opción valida.");
-        }
+        while(true)
+            switch(n){
+            case 1:
+                naveEspacial.agregarSistemaDePropulsion();
+            break;
+            case 2:
+                naveEspacial.agregarBlindaje();
+            break;
+            case 3:
+                naveEspacial.agregarCabina();
+            break;
+            case 4:
+                naveEspacial.agregarArmas();
+            break;
+            default:
+                System.out.println("Inserte una opción valida.");
+                n = MAux.getNum();
+            }
     }
     
+    /**
+     * Metodo auxiliar para poder elegir si es que el precio de la nave excede
+     * el presupuesto del cliente.
+     */
+    public void elegirPresupuesto(){
+        naveEspacial = null;
+        int n;
+        System.out.println("Lo sentimos el precio de la nave excede tu presupuesto:" 
+        + "\n1.- ¿Desea Diseñar otra nave?"
+        + "\n 2.- Ver nuestro catalogo"
+        + "\n Inserta una opción: ");
+        while(true){
+            n = MAux.getNum();
+            switch(n){ 
+                case 1:
+                break;
+                case 2:
+                System.out.println(catalogo());
+                elegirNave();
+                break;
+                default:
+                System.out.println("Por favor incerte una opcion valida.");
+            }
+        }
+    }
 
     /**
      * Metodo auxiliar para saber cuales son los componentes disponibles para crear la nave
@@ -81,4 +113,38 @@ public class ArmarNaveEspacial {
         return comp;
     }
 
+    /**
+     * Metodo auxiliar que nos regresa el catalogo de todas las naves por defecto que tenemos
+     * @return un String con todas las naves por defecto que tenemos y sus descripciones.
+     */
+    private String catalogo(){
+        String catalog = "";
+        LinkedList<NaveConcreta> nC = new LinkedList<>();
+        nC.add(new NaveIndividual());
+        nC.add(new NaveMilitar());
+        nC.add(new BaseEspacialDeGuerra());
+        for(NaveConcreta n: nC){
+            catalog += n.muestraNave() + "\n\n";
+        }
+        return catalog;
+    }
+
+    private void elegirNave(){
+        int n = MAux.getNum();;
+        while(true)
+            switch(n){
+                case 1:
+                naveEspacial = new NaveIndividual();
+                break;
+                case 2:
+                naveEspacial = new NaveMilitar();
+                break;
+                case 3:
+                naveEspacial = new BaseEspacialDeGuerra();
+                break;
+                default:
+                System.out.println("Por favor inserte una opcion valida: ");
+                n = MAux.getNum();
+            }
+    }
 }

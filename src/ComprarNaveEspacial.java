@@ -12,10 +12,9 @@ public class ComprarNaveEspacial{
       /* Objeto que nos va a simplificar mucho la implemetnación del programa. */
       ArmarNaveEspacial aNE = new ArmarNaveEspacial();
 
-      System.out.println("Bienvenido al sistema para crear naves espaciales :.)");
+      System.out.println("Bienvenido al sistema para crear naves espaciales :.)");      
       aNE.setPresupuesto();
       int n;
-      do{
         n = -1;
         while(n != 0){
           n = MAux.getNum();
@@ -25,20 +24,12 @@ public class ComprarNaveEspacial{
             n = -1;
           }
         }
-
         if(aNE.getNaveEspacial().getCosto() <= aNE.getPresupuesto()){
           System.out.println("Tu nave está lista para recoger, estas son sus caracteristicas: \n"
           + aNE.getNaveEspacial().muestraNave() 
           + "\nPor favor paga en caja: " + aNE.getNaveEspacial().getCosto());
-          break;
         }else{
-          System.out.println("Lo sentimos el precio de la nave excede tu presupuesto:" 
-          + "\n1.- ¿Desea Diseñar otra nave?"
-          + "\n 2.- Ver nuestro catalogo"
-          + "\n Inserta una opción: ");
-            n = MAux.getNum();
+          aNE.elegirPresupuesto();
         }
-
-      }while(n == 1);
     }
 }
