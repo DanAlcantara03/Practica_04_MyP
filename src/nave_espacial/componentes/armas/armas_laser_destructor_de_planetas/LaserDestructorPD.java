@@ -1,13 +1,13 @@
-package nave_espacial.componentes.armas.armas_misiles_plasma;
+package nave_espacial.componentes.armas.armas_laser_destructor_de_planetas;
 
 /**
  * Clase especifica que nos modela un blindaje reforzado por defecto, aqui ya 
  * implementaremos todos los metodos de la interfaz ComponenteNave
  */
-public class MisilesPlasmaPD extends AMisilesPlasma{
+public class LaserDestructorPD extends ALaserDestructor{
     
     /* Constructor vacio. */
-    public MisilesPlasmaPD(){}
+    public LaserDestructorPD(){}
 
     /**
      * Metodo que nos ayuda a saber el nombre del componente 
@@ -22,7 +22,7 @@ public class MisilesPlasmaPD extends AMisilesPlasma{
      * @return La descripción del componente de la nave
      */
     @Override public String descripcion(){
-        return "Lanza 3 misiles de plasma por disparo";
+        return "Derrota a un ejercito o a un planeta en cuestion de segundos con un disparo";
     }
 
     /**
@@ -30,7 +30,7 @@ public class MisilesPlasmaPD extends AMisilesPlasma{
      * @return El precio del componente de la nave
      */
     @Override public double precio(){
-        return 23000;
+        return 50000;
     }
 
     /**
@@ -38,7 +38,7 @@ public class MisilesPlasmaPD extends AMisilesPlasma{
      * @return Un aumento o disminución del ataque de la nave
      */
     @Override public int ataque(){
-        return 60;
+        return 90;
     }
 
     /**
@@ -46,7 +46,7 @@ public class MisilesPlasmaPD extends AMisilesPlasma{
      * @return Un aumento o disminución de la defensa de la nave
      */
     @Override public int defensa(){
-        return 50;
+        return 85;
     }
 
     /**
@@ -54,7 +54,7 @@ public class MisilesPlasmaPD extends AMisilesPlasma{
      * @return Un aumento o disminución de la velocidad de la nave
      */
     @Override public int velocidad(){
-        return -700;
+        return -5000;
     }
 
     /**
@@ -63,6 +63,6 @@ public class MisilesPlasmaPD extends AMisilesPlasma{
      * de armarla
      */
     @Override public double peso(){
-        return 2300;
+        return 5600;
     }
 }

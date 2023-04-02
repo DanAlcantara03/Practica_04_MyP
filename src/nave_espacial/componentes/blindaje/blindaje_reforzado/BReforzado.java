@@ -14,6 +14,6 @@ public abstract class BReforzado extends Blindaje{
      * @return textualmente "Reforzado"
      */
     public String subTipo(){
-        return "Un Piloto";
+        return "Reforzado";
     }
 }

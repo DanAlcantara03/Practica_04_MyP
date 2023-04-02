@@ -1,13 +1,13 @@
-package nave_espacial.componentes.armas.armas_misiles_plasma;
+package nave_espacial.componentes.blindaje.blindaje_fortaleza;
 
 /**
- * Clase especifica que nos modela un blindaje reforzado por defecto, aqui ya 
+ * Clase especifica que nos modela un blindaje fortaleza por defecto, aqui ya 
  * implementaremos todos los metodos de la interfaz ComponenteNave
  */
-public class MisilesPlasmaPD extends AMisilesPlasma{
+public class FortalezaPD extends BFortaleza{
     
     /* Constructor vacio. */
-    public MisilesPlasmaPD(){}
+    public FortalezaPD(){}
 
     /**
      * Metodo que nos ayuda a saber el nombre del componente 
@@ -22,7 +22,7 @@ public class MisilesPlasmaPD extends AMisilesPlasma{
      * @return La descripción del componente de la nave
      */
     @Override public String descripcion(){
-        return "Lanza 3 misiles de plasma por disparo";
+        return "Blindaje sumamente rígido y de varias capas";
     }
 
     /**
@@ -30,7 +30,7 @@ public class MisilesPlasmaPD extends AMisilesPlasma{
      * @return El precio del componente de la nave
      */
     @Override public double precio(){
-        return 23000;
+        return 21000;
     }
 
     /**
@@ -38,7 +38,7 @@ public class MisilesPlasmaPD extends AMisilesPlasma{
      * @return Un aumento o disminución del ataque de la nave
      */
     @Override public int ataque(){
-        return 60;
+        return 9;
     }
 
     /**
@@ -54,7 +54,7 @@ public class MisilesPlasmaPD extends AMisilesPlasma{
      * @return Un aumento o disminución de la velocidad de la nave
      */
     @Override public int velocidad(){
-        return -700;
+        return -4000;
     }
 
     /**
@@ -63,6 +63,7 @@ public class MisilesPlasmaPD extends AMisilesPlasma{
      * de armarla
      */
     @Override public double peso(){
-        return 2300;
+        return 12000;
     }
 }
+

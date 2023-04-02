@@ -1,13 +1,13 @@
-package nave_espacial.componentes.armas.armas_misiles_plasma;
+package nave_espacial.componentes.blindaje.blindaje_simple;
 
 /**
- * Clase especifica que nos modela un blindaje reforzado por defecto, aqui ya 
+ * Clase especifica que nos modela un blindaje simple por defecto, aqui ya 
  * implementaremos todos los metodos de la interfaz ComponenteNave
  */
-public class MisilesPlasmaPD extends AMisilesPlasma{
+public class SimplePD extends BSimple{
     
     /* Constructor vacio. */
-    public MisilesPlasmaPD(){}
+    public SimplePD(){} 
 
     /**
      * Metodo que nos ayuda a saber el nombre del componente 
@@ -22,7 +22,7 @@ public class MisilesPlasmaPD extends AMisilesPlasma{
      * @return La descripción del componente de la nave
      */
     @Override public String descripcion(){
-        return "Lanza 3 misiles de plasma por disparo";
+        return "Blindaje tradicional, blando y delgado";
     }
 
     /**
@@ -30,7 +30,7 @@ public class MisilesPlasmaPD extends AMisilesPlasma{
      * @return El precio del componente de la nave
      */
     @Override public double precio(){
-        return 23000;
+        return 10000;
     }
 
     /**
@@ -38,7 +38,7 @@ public class MisilesPlasmaPD extends AMisilesPlasma{
      * @return Un aumento o disminución del ataque de la nave
      */
     @Override public int ataque(){
-        return 60;
+        return 12;
     }
 
     /**
@@ -46,7 +46,7 @@ public class MisilesPlasmaPD extends AMisilesPlasma{
      * @return Un aumento o disminución de la defensa de la nave
      */
     @Override public int defensa(){
-        return 50;
+        return 10;
     }
 
     /**
@@ -54,7 +54,7 @@ public class MisilesPlasmaPD extends AMisilesPlasma{
      * @return Un aumento o disminución de la velocidad de la nave
      */
     @Override public int velocidad(){
-        return -700;
+        return 0;
     }
 
     /**
@@ -63,6 +63,6 @@ public class MisilesPlasmaPD extends AMisilesPlasma{
      * de armarla
      */
     @Override public double peso(){
-        return 2300;
+        return 7000;
     }
 }
