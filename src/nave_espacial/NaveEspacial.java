@@ -12,7 +12,7 @@ import nave_espacial.componentes.sistema_de_propulsion.SistemaDePropulsion;
  */
 public abstract class NaveEspacial{
     /* Una lista con todos los componenetes que va a tener la nave espacial */
-    protected LinkedList<ComponenteNave> naveComponenetes;
+    protected LinkedList<ComponenteNave> naveComponenetes = new LinkedList<>();
     /* Es el sistema de propulsión de la nave */
     protected SistemaDePropulsion sistemaDePropulsion;
     /* Es el blindaje que va a tener la nave */
@@ -57,7 +57,7 @@ public abstract class NaveEspacial{
     public String muestraNave(){
         String nave = "";
         if(naveTerminada()){
-            nave += "Nave Espacial " + getNombre() + "\n";
+            nave += getNombre() + "\n";
             nave += " Componentes: \n";
             for(ComponenteNave i: naveComponenetes){
                 nave += "   " + i.nombre() + "\n";
@@ -157,26 +157,7 @@ public abstract class NaveEspacial{
     public boolean naveTerminada(){
         boolean t = sistemaDePropulsion != null && blindaje != null &&
         cabina != null && armas != null;
-        if(!t)
-            System.out.println(naveSinTerminar());
         return t;
     }
 
-    /**
-     * Metodo auxiliar que nos ayuda a saber que componentes faltan para terminar de
-     * armar la nave.
-     * @return Un String con los componenetes que faltan para terminar la nave.
-     */
-    private String naveSinTerminar(){
-        String msj = "\nFaltan por elegir los componentes: \n";
-        if(sistemaDePropulsion == null)
-            msj += "   Sistema de Propulsión\n";
-        if(blindaje == null)
-            msj += "   Blindaje\n";
-        if(cabina == null)
-            msj += "   Cabina\n";
-        if(armas == null)
-            msj += "   Armas\n";
-        return msj;
-    }
 }

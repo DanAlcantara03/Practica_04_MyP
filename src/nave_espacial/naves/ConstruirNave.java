@@ -20,7 +20,7 @@ import nave_espacial.componentes.sistema_de_propulsion.sdp_interplanetario.Inter
 public class ConstruirNave extends NaveEspacial{
     /* Un string para que el usuario pueda ponerle el nombre que quiera a su nave
     o simplemente quedarse con el nombre por defecto "Nave Armada" */
-    private String nombre = "Nave Armada";
+    private String nombre = "Nave Armada por el cliente";
 
     /* Constructor vacio. */
     public ConstruirNave(){}
@@ -48,9 +48,11 @@ public class ConstruirNave extends NaveEspacial{
      */
     @Override public NaveEspacial agregarSistemaDePropulsion(){
         if( sistemaDePropulsion != null)
-            System.out.println("Ya ah elegido un sistema de propulsión para esta nave.");
-        else
+            System.out.println("Ya ah elegido un sistema de propulsión para esta nave.\n");
+        else{
             elegirSDP();
+            naveComponenetes.add(sistemaDePropulsion);
+        }
         return this;
     }
 
@@ -60,9 +62,11 @@ public class ConstruirNave extends NaveEspacial{
      */
     @Override public NaveEspacial agregarBlindaje(){
         if( blindaje != null)
-            System.out.println("Ya ah elegido un Blindaje para esta nave.");
-        else
+            System.out.println("Ya ah elegido un Blindaje para esta nave.\n");
+        else{
             elegirB();
+            naveComponenetes.add(blindaje);
+        }
         return this;
     }
 
@@ -72,17 +76,25 @@ public class ConstruirNave extends NaveEspacial{
      */
     @Override public NaveEspacial agregarCabina(){
         if( cabina != null)
-            System.out.println("Ya ah elegido una cabina para esta nave.");
-        else
+            System.out.println("Ya ah elegido una cabina para esta nave.\n");
+        else{
             elegirC();
+            naveComponenetes.add(cabina);
+        }
         return this;
     }
 
+    /**
+     * Metodo que nos ayuda a agregar armas a la nave espacial
+     * es que no lo tiene ya.
+     */
     @Override public NaveEspacial agregarArmas(){
         if( armas != null)
-            System.out.println("Ya ah elegido armas para esta nave.");
-        else
+            System.out.println("Ya ah elegido armas para esta nave.\n");
+        else{
             elegirA();
+            naveComponenetes.add(armas);
+        }
         return this;
     }
 
@@ -90,7 +102,7 @@ public class ConstruirNave extends NaveEspacial{
      * Metodo auxiliar para elegir uno de los sistemas de propulsión disponibles.
      */
     private void elegirSDP(){
-        while(true){
+        while(sistemaDePropulsion == null){
             System.out.println(MAux.getPropulsion() + "\n");
             int n = MAux.getNum();
             switch(n){
@@ -106,14 +118,14 @@ public class ConstruirNave extends NaveEspacial{
                 default: 
                     System.out.println("Esa no es una opción valida intentelo de nuevo\n");
             }
-        }
+        }        
     }
 
     /**
      * Metodo auxiliar para elegir uno de los blindajes disponibles.
      */
     private void elegirB(){
-        while(true){
+        while(blindaje == null){
             System.out.println(MAux.getBlindajes() + "\n");
             int n = MAux.getNum();
             switch(n){
@@ -129,14 +141,14 @@ public class ConstruirNave extends NaveEspacial{
                 default: 
                     System.out.println("Esa no es una opción valida intentelo de nuevo\n");
             }
-        }
+        }        
     }
 
     /**
      * Metodo auxiliar para elegir una de las cabinas disponibles.
      */
     private void elegirC(){
-        while(true){
+        while(cabina == null){
             System.out.println(MAux.getCabinas() + "\n");
             int n = MAux.getNum();
             switch(n){
@@ -159,7 +171,7 @@ public class ConstruirNave extends NaveEspacial{
      * Metodo auxiliar para elegir una de las armas disponibles.
      */
     private void elegirA(){
-        while(true){
+        while(armas == null){
             System.out.println(MAux.getArmas() + "\n");
             int n = MAux.getNum();
             switch(n){

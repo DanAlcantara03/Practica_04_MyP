@@ -63,29 +63,27 @@ public class ArmarNaveEspacial {
             System.out.println("Elije con que componentes deseas armar tu nave:\n ");
             System.out.println(componentes());
             n = MAux.getNum();
-            while(true){
-                switch(n){
-                case 1:
-                    naveEspacial.agregarSistemaDePropulsion();
-                break;
-                case 2:
-                    naveEspacial.agregarBlindaje();
-                break;
-                case 3:
-                    naveEspacial.agregarCabina();
-                break;
-                case 4:
-                    naveEspacial.agregarArmas();
-                break;
-                case 0:
-                if(!naveEspacial.naveTerminada()){
-                    System.out.println("La nave aun no esta terminada.");
-                }
-                break;
-                default:
-                    System.out.println("Inserte una opción valida.");
-                    n = MAux.getNum();
-                }
+            switch(n){
+            case 1:
+                naveEspacial.agregarSistemaDePropulsion();
+            break;
+            case 2:
+                naveEspacial.agregarBlindaje();
+            break;
+            case 3:
+                naveEspacial.agregarCabina();
+            break;
+            case 4:
+                naveEspacial.agregarArmas();
+            break;
+            case 0:
+            if(!naveEspacial.naveTerminada()){
+                System.out.println("La nave aun no esta terminada.\n");
+            }
+            break;
+            default:
+                System.out.println("Inserte una opción valida.\n");
+                n = MAux.getNum();
             }
         }
     }
@@ -95,17 +93,16 @@ public class ArmarNaveEspacial {
      * el presupuesto del cliente.
      */
     public void elegirPresupuesto(){
-        naveEspacial = null;
         int n;
         System.out.println("Lo sentimos el precio de la nave excede tu presupuesto:" 
         + "\n1.- ¿Desea Diseñar otra nave?"
-        + "\n 2.- Ver nuestro catalogo"
-        + "\n Inserta una opción: ");
+        + "\n2.- Ver nuestro catalogo");
         while(true){
             n = MAux.getNum();
             System.out.println("");
             switch(n){ 
                 case 1:
+                naveEspacial = new ConstruirNave();
                 armarNave();
                 break;
                 case 2:

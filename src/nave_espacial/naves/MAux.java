@@ -29,7 +29,7 @@ public class MAux {
     public static int getNum(){
         int c;
         while(true){
-            Scanner sc = new Scanner(System.in);            
+            Scanner sc = new Scanner(System.in);
             try{
                 System.out.print("\nElija alguna opcion: ");
                 c = sc.nextInt();
