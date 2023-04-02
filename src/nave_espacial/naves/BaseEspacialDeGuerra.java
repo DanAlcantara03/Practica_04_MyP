@@ -5,6 +5,7 @@ import nave_espacial.componentes.armas.armas_laser_destructor_de_planetas.LaserD
 import nave_espacial.componentes.blindaje.Blindaje;
 import nave_espacial.componentes.blindaje.blindaje_fortaleza.FortalezaPD;
 import nave_espacial.componentes.cabina.Cabina;
+import nave_espacial.componentes.cabina.cabina_ejercito.EjercitoPD;
 import nave_espacial.componentes.sistema_de_propulsion.SistemaDePropulsion;
 import nave_espacial.componentes.sistema_de_propulsion.sdp_intergalactico.IntergalacticoPD;
 
@@ -47,7 +48,7 @@ public class BaseEspacialDeGuerra extends NaveConcreta{
      * @return una cabina para un ejercito PD.
      */
     @Override protected Cabina cabinaC(){
-        return null;
+        return new EjercitoPD();
     }
 
     /**

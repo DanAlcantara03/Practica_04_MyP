@@ -5,7 +5,7 @@ import nave_espacial.componentes.armas.armas_laser_simple.LaserSimplePD;
 import nave_espacial.componentes.blindaje.Blindaje;
 import nave_espacial.componentes.blindaje.blindaje_simple.SimplePD;
 import nave_espacial.componentes.cabina.Cabina;
-
+import nave_espacial.componentes.cabina.cabina_ejercito.EjercitoPD;
 import nave_espacial.componentes.sistema_de_propulsion.SistemaDePropulsion;
 import nave_espacial.componentes.sistema_de_propulsion.sdp_interplanetario.InterplanetarioPD;
 
@@ -48,7 +48,7 @@ public class NaveMilitar extends NaveConcreta{
      * @return una cabina para un ejercito PD.
      */
     @Override protected Cabina cabinaC(){
-        return null;
+        return new EjercitoPD();
     }
 
     /**

@@ -9,6 +9,8 @@ import nave_espacial.componentes.armas.armas_misiles_plasma.MisilesPlasmaPD;
 import nave_espacial.componentes.blindaje.blindaje_fortaleza.FortalezaPD;
 import nave_espacial.componentes.blindaje.blindaje_reforzado.ReforzadoPD;
 import nave_espacial.componentes.blindaje.blindaje_simple.SimplePD;
+import nave_espacial.componentes.cabina.cabina_ejercito.EjercitoPD;
+import nave_espacial.componentes.cabina.cabina_tripulacion_pequeña.TripulacionPequeñaPD;
 import nave_espacial.componentes.cabina.cabina_upiloto.PilotoPD;
 import nave_espacial.componentes.sistema_de_propulsion.sdp_intercontinental.IntercontinentalPD;
 import nave_espacial.componentes.sistema_de_propulsion.sdp_intergalactico.IntergalacticoPD;
@@ -80,8 +82,8 @@ public class MAux {
         String comp = "Cabinas Disponibles: \n";
         LinkedList<ComponenteNave> sDP = new LinkedList<ComponenteNave>();        
         sDP.add(new PilotoPD());
-        //sDP.add(new );
-        //sDP.add(new );
+        sDP.add(new TripulacionPequeñaPD());
+        sDP.add(new EjercitoPD());
         comp += recorrerLista(sDP);
         return comp;
     }
