@@ -58,15 +58,15 @@ public abstract class NaveEspacial{
         String nave = "";
         if(naveTerminada()){
             nave += "Nave Espacial " + getNombre() + "\n";
-            nave += "Componentes: \n";
+            nave += " Componentes: \n";
             for(ComponenteNave i: naveComponenetes){
                 nave += "   " + i.nombre() + "\n";
             }
-            nave += "Ataque: " + getAtaque() + "\n";
-            nave += "Defensa: " + getDefensa() + "\n";
-            nave += "Velocidad: " + getVelocidad() + "\n";
-            nave += "Peso: " + getPeso() + "\n";
-            nave += "Precio: " + getCosto() + "\n";
+            nave += " Ataque: " + getAtaque() + "\n";
+            nave += " Defensa: " + getDefensa() + "\n";
+            nave += " Velocidad: " + getVelocidad() + "\n";
+            nave += " Peso: " + getPeso() + "\n";
+            nave += " Precio: " + getCosto() + "\n";
         }
         return nave;
     }

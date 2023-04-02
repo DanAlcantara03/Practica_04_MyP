@@ -1,9 +1,12 @@
 package nave_espacial.naves;
 
-import nave_espacial.NaveEspacial;
+import nave_espacial.componentes.armas.Armas;
 import nave_espacial.componentes.armas.armas_misiles_plasma.MisilesPlasmaPD;
+import nave_espacial.componentes.blindaje.Blindaje;
 import nave_espacial.componentes.blindaje.blindaje_reforzado.ReforzadoPD;
+import nave_espacial.componentes.cabina.Cabina;
 import nave_espacial.componentes.cabina.cabina_upiloto.PilotoPD;
+import nave_espacial.componentes.sistema_de_propulsion.SistemaDePropulsion;
 import nave_espacial.componentes.sistema_de_propulsion.sdp_intercontinental.IntercontinentalPD;
 
 /**
@@ -11,14 +14,11 @@ import nave_espacial.componentes.sistema_de_propulsion.sdp_intercontinental.Inte
  * los componenetes Viaje Intercontinental PD, Blindaje reforzado PD, Cabina para 
  * 1 Piloto PD, y de Armas Misiles de Plasma.
  */
-public class NaveIndividual extends NaveEspacial{
+public class NaveIndividual extends NaveConcreta{
     
-    /* Construnctor por defecto de una Nave individual */
+    /* Constructor por defecto de una Nave individual */
     public NaveIndividual(){
-        agregarSistemaDePropulsion();
-        agregarBlindaje();
-        agregarCabina();
-        agregarArmas();
+        super();
     }
 
     /**
@@ -30,62 +30,30 @@ public class NaveIndividual extends NaveEspacial{
     }
 
     /**
-     * Metodo que nos ayuda a que la nave Individual tenga un sistema de propulsion
-     * intercontinetal por defecto.
-     * @return la nave con el sistema de Propulsion intercontinental
+     * @return un sistema de Propulsión intercontinental PD.
      */
-    @Override public NaveEspacial agregarSistemaDePropulsion(){
-        if(sistemaDePropulsion == null){
-            sistemaDePropulsion = new IntercontinentalPD();
-            naveComponenetes.add(sistemaDePropulsion);
-        }else{
-            System.out.println("La nave espacial ya tiene un Sistema de Propulsion");
-        }
-        return this;
+    @Override protected SistemaDePropulsion sDPC(){
+        return new IntercontinentalPD();
     }
 
     /**
-     * Metodo que nos ayuda a que la nave Individual tenga un blindaje reforzado
-     * por defecto.
-     * @return la nave con el Blindaje reforzado.
+     * @return un blindaje Reforzado PD.
      */
-    @Override public NaveEspacial agregarBlindaje(){
-        if(blindaje == null){
-            blindaje = new ReforzadoPD();
-            naveComponenetes.add(blindaje);
-        }else{
-            System.out.println("La nave espacial ya tiene un Blindaje ");
-        }
-        return this;
+    @Override protected Blindaje blindajeC(){
+        return new ReforzadoPD();
+    }
+    
+    /**
+     * @return una cabina con 1 piloto PD.
+     */
+    @Override protected Cabina cabinaC(){
+        return new PilotoPD();
     }
 
     /**
-     * Metodo que nos ayuda a que la nave individual tenga una cabina de 1 piloto por
-     * defecto
-     * @return la nave con la cabina de 1 piloto
+     * @return Unos misiles de Plasma PD.
      */
-    @Override public NaveEspacial agregarCabina(){
-        if(cabina == null){
-            cabina = new PilotoPD();
-            naveComponenetes.add(cabina);
-        }else{
-            System.out.println("La nave espacial ya tiene una Cabina.");
-        }
-        return this;
-    }
-
-    /**
-     * Metodo que nos ayuda a que la nave individual tenga una cabina de 1 piloto por
-     * defecto
-     * @return la nave con la cabina de 1 piloto
-     */
-    @Override public NaveEspacial agregarArmas(){
-        if(armas == null){
-            armas = new MisilesPlasmaPD();
-            naveComponenetes.add(cabina);
-        }else{
-            System.out.println("La nave espacial ya tiene Armas.");
-        }
-        return this;
+    @Override protected Armas armasC(){
+        return new MisilesPlasmaPD();
     }
 }
